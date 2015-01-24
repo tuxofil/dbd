@@ -16,5 +16,6 @@ fi
 
 sudo -n /usr/bin/reprepro \
     --basedir "$REPREPRO_DIR" \
+    --ask-passphrase \
     include "$DISTRIBUTION" \
     "$1"
