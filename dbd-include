@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <filename.changes>" 1>&2
+    exit 1
+fi
+
+. /etc/dbd.conf
+
+sudo -n /usr/bin/reprepro \
+    --basedir "$REPREPRO_DIR" \
+    include "$DISTRIBUTION" \
+    "$1"

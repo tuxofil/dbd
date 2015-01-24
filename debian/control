@@ -1,0 +1,16 @@
+Source: dbd
+Section: devel
+Priority: extra
+Maintainer: Aleksey Morarash <aleksey.morarash@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: https://github.com/tuxofil/dbd
+Vcs-Browser: https://github.com/tuxofil/dbd
+Vcs-Git: https://github.com/tuxofil/dbd.git
+
+Package: dbd
+Architecture: all
+Depends: sudo, pbuilder, reprepro
+Pre-Depends: adduser
+Description: Environment for building DEB packages
+ Environment for building DEB packages.

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+. /etc/dbd.conf
+[ -f "$BASETGZ" ] || dbd-mktgz
+
+sudo -n /usr/sbin/pbuilder \
+    --login \
+    --configfile /etc/dbd.conf \
+    --save-after-login

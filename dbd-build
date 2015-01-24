@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <filename.dsc>" 1>&2
+    exit 1
+fi
+
+. /etc/dbd.conf
+[ -f "$BASETGZ" ] || dbd-mktgz
+
+sudo -n /usr/sbin/pbuilder \
+    --build \
+    --configfile /etc/dbd.conf \
+    "$1"

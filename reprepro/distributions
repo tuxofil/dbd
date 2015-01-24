@@ -1,0 +1,7 @@
+Suite: unstable
+Codename: wheezy
+Architectures: amd64 i386 source
+Components: main non-free contrib
+Description: APT Repository
+Contents:
+#SignWith: ********
