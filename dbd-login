@@ -1,10 +1,14 @@
 #!/bin/sh
 
+# Make changes in a base root FS tarball.
+
 set -e
 
 . /etc/dbd.conf
+# If the base root FS tarball is not created yet, create it
 [ -f "$BASETGZ" ] || dbd-mktgz
 
+# Unpack the base root FS tarball and chroot into it
 sudo -n /usr/sbin/pbuilder \
     --login \
     --configfile /etc/dbd.conf \

@@ -1,6 +1,8 @@
 #!/bin/sh
 
-set -e
+# Create a base root FS tarball.
+# The tarball will be extracted and chrooted on each
+# package build.
 
 sudo -n /usr/sbin/pbuilder \
     --create \

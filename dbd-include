@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Insert a new binary DEB package into an APT repository.
+# This includes copying the files into the repository dirs
+# and updating an index files of the repository (with PGP
+# signing, if configured).
+
 set -e
 
 if [ -z "$1" ]; then

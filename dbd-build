@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Build a binary DEB package from a source package.
+
 set -e
 
 if [ -z "$1" ]; then
@@ -8,8 +10,10 @@ if [ -z "$1" ]; then
 fi
 
 . /etc/dbd.conf
+# If a base root FS tarball is not created yet, create it
 [ -f "$BASETGZ" ] || dbd-mktgz
 
+# Do the chrooted build
 sudo -n /usr/sbin/pbuilder \
     --build \
     --configfile /etc/dbd.conf \
