@@ -14,6 +14,8 @@ Includes:
  environment;
 * _dbd-login_ - unpack and chroot into a base root FS. After
  logout all changes will be saved;
+* _dbd-login-nosave_ - unpack and chroot into a base root FS.
+ No changes will be saved after a logout;
 * _dbd-include_ - include built binary package into an APT
  repository;
 * _dbd-remove_ - remove package from the APT repository.
@@ -72,6 +74,14 @@ $ dbd-login
 
 In a root shell appeared make all essential changes and logout. All
 changes made will be saved into a base root FS tarball for future use.
+
+### Test something in a clean chrooted environment without saving changes
+
+```sh
+$ dbd-login-nosave
+```
+
+After logout the chroot will be destroyed.
 
 ### Remove package from the APT repository
 

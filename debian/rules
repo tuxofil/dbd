@@ -19,6 +19,7 @@ override_dh_install:
 	install -m 755 \
 	    dbd-mktgz \
 	    dbd-login \
+	    dbd-login-nosave \
 	    dbd-build \
 	    dbd-include \
 	    dbd-remove \
