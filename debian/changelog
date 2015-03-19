@@ -1,3 +1,9 @@
+dbd (0.2.0) unstable; urgency=low
+
+  * added dbd-login-nosave command line tool.
+
+ -- Aleksey Morarash <aleksey.morarash@gmail.com>  Thu, 19 Mar 2015 15:40:00 +0200
+
 dbd (0.1.2) unstable; urgency=low
 
   * Initial release.
