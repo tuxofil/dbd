@@ -6,33 +6,3 @@ export DH_OPTIONS
 
 %:
 	dh $@
-
-# Implement staged installation
-NAME = dbd
-DESTDIR = debian/$(NAME)
-override_dh_install:
-	install -m 755 -d $(DESTDIR)/etc
-	install -m 644 $(NAME).conf $(DESTDIR)/etc
-	install -m 755 -d $(DESTDIR)/etc/sudoers.d
-	install -m 440 sudoers $(DESTDIR)/etc/sudoers.d/$(NAME)
-	install -m 755 -d $(DESTDIR)/usr/bin
-	install -m 755 \
-	    dbd-mktgz \
-	    dbd-login \
-	    dbd-login-nosave \
-	    dbd-build \
-	    dbd-include \
-	    dbd-remove \
-	    $(DESTDIR)/usr/bin
-	install -m 755 -d \
-	    $(DESTDIR)/var/lib/$(NAME)/hooks \
-	    $(DESTDIR)/var/lib/$(NAME)/build \
-	    $(DESTDIR)/var/lib/$(NAME)/aptcache
-	install -m 755 \
-	    hooks/D99apt-get-update \
-	    $(DESTDIR)/var/lib/$(NAME)/hooks
-	install -m 755 -d $(DESTDIR)/var/www/apt/conf
-	install -m 644 \
-	    reprepro/distributions \
-	    reprepro/options \
-	    $(DESTDIR)/var/www/apt/conf

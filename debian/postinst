@@ -2,11 +2,10 @@
 
 set -e
 
-NAME=dbd
-
 case "$1" in
     configure)
-        chmod 0770 /var/www/apt/conf
+        chmod 0770 /etc/dbd/apt
+        ln -sf /etc/dbd/apt /var/www/dbd-apt/conf
         ;;
     abort-upgrade|abort-remove|abort-deconfigure)
         ;;

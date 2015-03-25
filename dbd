@@ -1,0 +1,8 @@
+# Sudoers rules for dbd tools
+
+%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --create --debootstrapopts --include=debhelper\,fakeroot --configfile /etc/dbd/dbd.conf
+%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --build --configfile /etc/dbd/dbd.conf *.dsc
+%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --login --configfile /etc/dbd/dbd.conf --save-after-login
+%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --login --configfile /etc/dbd/dbd.conf
+%dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt --ask-passphrase include * *.changes
+%dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt --ask-passphrase remove * *

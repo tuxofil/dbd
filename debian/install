@@ -1,0 +1,11 @@
+dbd /etc/sudoers.d
+dbd.conf /etc/dbd
+reprepro/distributions /etc/dbd/apt
+reprepro/options /etc/dbd/apt
+hooks/D99apt-get-update /var/lib/dbd/hooks
+dbd-mktgz /usr/bin
+dbd-login /usr/bin
+dbd-login-nosave /usr/bin
+dbd-build /usr/bin
+dbd-include /usr/bin
+dbd-remove /usr/bin

@@ -6,4 +6,5 @@
 
 sudo -n /usr/sbin/pbuilder \
     --create \
-    --configfile /etc/dbd.conf
+    --debootstrapopts --include=debhelper,fakeroot \
+    --configfile /etc/dbd/dbd.conf

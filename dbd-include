@@ -1,21 +1,17 @@
-#!/bin/sh
+#!/bin/sh -e
 
 # Insert a new binary DEB package into an APT repository.
 # This includes copying the files into the repository dirs
 # and updating an index files of the repository (with PGP
 # signing, if configured).
 
-set -e
-
 if [ -z "$1" ]; then
     echo "Usage: $0 <filename.changes>" 1>&2
     exit 1
 fi
 
-. /etc/dbd.conf
-
+. /etc/dbd/dbd.conf
 sudo -n /usr/bin/reprepro \
-    --basedir "$REPREPRO_DIR" \
+    --basedir /var/www/dbd-apt \
     --ask-passphrase \
-    include "$DISTRIBUTION" \
-    "$1"
+    include "$DISTRIBUTION" "$1"

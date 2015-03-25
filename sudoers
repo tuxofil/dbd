@@ -1,6 +1,0 @@
-%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --create --configfile /etc/dbd.conf
-%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --build --configfile /etc/dbd.conf *.dsc
-%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --login --configfile /etc/dbd.conf --save-after-login
-%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --login --configfile /etc/dbd.conf
-%dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir * --ask-passphrase include * *.changes
-%dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir * --ask-passphrase remove * *

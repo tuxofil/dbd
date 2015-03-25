@@ -22,13 +22,13 @@ Includes:
 
 ## Directory layout
 
-The main configuration file is ```/etc/dbd.conf```.
+The main configuration file is ```/etc/dbd/dbd.conf```.
 
 Binary DEB package will be saved in the current dir.
 
-The APT repository base directory is ```/var/www/apt```. The
+The APT repository base directory is ```/var/www/dbd-apt```. The
 repo have its own configuration files located in
-```/var/www/apt/conf``` directory.
+```/etc/dbd/apt``` directory.
 
 ## Configuration
 
@@ -36,12 +36,12 @@ To make able a particular user to call the scripts the user
 must be added into a special system group ```dbd```.
 
 To create signed APT repo you have to set ```SignWith``` option
-in the ```/var/www/apt/conf/distributions``` file to point to
+in the ```/etc/dbd/apt/distributions``` file to point to
 a valid PGP key. As far as operations with the APT repository is
 done with superuser privileges, the PGP key must be owned by root.
 
 If you want to publish the APT repository via HTTP/FTP, just
-configure your Web/FTP/... server to look to the ```/var/www/apt```
+configure your Web/FTP/... server to look to the ```/var/www/dbd-apt```
 dir.
 
 ## Short usage example

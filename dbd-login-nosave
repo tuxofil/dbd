@@ -1,15 +1,13 @@
-#!/bin/sh
+#!/bin/sh -e
 
 # Login in a base root FS tarball.
 # No changes will be saved after a logout.
 
-set -e
-
-. /etc/dbd.conf
+. /etc/dbd/dbd.conf
 # If the base root FS tarball is not created yet, create it
 [ -f "$BASETGZ" ] || dbd-mktgz
 
 # Unpack the base root FS tarball and chroot into it
 sudo -n /usr/sbin/pbuilder \
     --login \
-    --configfile /etc/dbd.conf
+    --configfile /etc/dbd/dbd.conf
