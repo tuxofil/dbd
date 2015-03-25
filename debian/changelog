@@ -1,3 +1,18 @@
+dbd (0.3.0) unstable; urgency=low
+
+  * keep reprepro configs under the /etc dir (as required
+    by the Debian Policy) and symlink $APT_DIR/conf to them;
+  * remove all generated files and dirs on package purge;
+  * simplify installation specs, using dh_install tool features;
+  * use /var/www/dbd-apt dir for APT repo instead of potentially
+    conflicting /var/www/apt;
+  * remove REPREPRO_DIR var from the main config file;
+  * autoinstall debhelper and fakeroot into a base tarball
+    because they are always installed on package build;
+  * minor style fixes.
+
+ -- Aleksey Morarash <aleksey.morarash@gmail.com>  Wed, 25 Mar 2015 13:08:00 +0200
+
 dbd (0.2.0) unstable; urgency=low
 
   * added dbd-login-nosave command line tool.
