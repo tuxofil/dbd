@@ -1,3 +1,10 @@
+dbd (0.4.0) unstable; urgency=low
+
+  * use Jessie distro
+  * force inclusion of sources tarball in the package
+
+ -- Aleksey Morarash <aleksey.morarash@gmail.com>  Sat, 07 Nov 2015 21:02:58 +0200
+
 dbd (0.3.0) unstable; urgency=low
 
   * keep reprepro configs under the /etc dir (as required
