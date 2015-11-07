@@ -1,5 +1,5 @@
 Suite: unstable
-Codename: wheezy
+Codename: jessie
 Architectures: amd64 i386 source
 Components: main non-free contrib
 Description: APT Repository
