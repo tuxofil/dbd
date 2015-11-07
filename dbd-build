@@ -13,6 +13,6 @@ fi
 
 # Do the chrooted build
 sudo -n /usr/sbin/pbuilder \
-    --build \
+    --build --debbuildopts -sa \
     --configfile /etc/dbd/dbd.conf \
     "$1"
