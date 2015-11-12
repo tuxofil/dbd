@@ -1,3 +1,4 @@
+etc/apache2/dbd.conf /etc/apache2/sites-available
 etc/sudoers.d/dbd /etc/sudoers.d
 etc/dbd/dbd.conf /etc/dbd
 reprepro/distributions /etc/dbd/apt
