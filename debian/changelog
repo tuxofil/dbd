@@ -1,3 +1,18 @@
+dbd (1.0.0) unstable; urgency=low
+
+  * add title html page for the repo
+  * introduce multiple APT distros
+  * DEB specs: add Suggests field
+  * add example config for nginx web server
+  * add example config for Apache web server
+  * move config files to "etc" subdir
+  * reprepro: remove redundant option
+  * add dbd-removesrc script
+  * move executables in separate "bin" subdir
+  * reprepro: do not use unsecure --ask-passphrase cmd option
+
+ -- Aleksey Morarash <aleksey.morarash@gmail.com>  Thu, 12 Nov 2015 18:39:23 +0200
+
 dbd (0.4.0) unstable; urgency=low
 
   * use Jessie distro
