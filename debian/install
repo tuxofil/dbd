@@ -3,9 +3,9 @@ dbd.conf /etc/dbd
 reprepro/distributions /etc/dbd/apt
 reprepro/options /etc/dbd/apt
 hooks/D99apt-get-update /var/lib/dbd/hooks
-dbd-mktgz /usr/bin
-dbd-login /usr/bin
-dbd-login-nosave /usr/bin
-dbd-build /usr/bin
-dbd-include /usr/bin
-dbd-remove /usr/bin
+bin/dbd-mktgz /usr/bin
+bin/dbd-login /usr/bin
+bin/dbd-login-nosave /usr/bin
+bin/dbd-build /usr/bin
+bin/dbd-include /usr/bin
+bin/dbd-remove /usr/bin
