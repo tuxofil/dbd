@@ -1,5 +1,5 @@
-dbd /etc/sudoers.d
-dbd.conf /etc/dbd
+etc/sudoers.d/dbd /etc/sudoers.d
+etc/dbd/dbd.conf /etc/dbd
 reprepro/distributions /etc/dbd/apt
 reprepro/options /etc/dbd/apt
 hooks/D99apt-get-update /var/lib/dbd/hooks
