@@ -13,5 +13,4 @@ fi
 . /etc/dbd/dbd.conf
 sudo -n /usr/bin/reprepro \
     --basedir /var/www/dbd-apt \
-    --ask-passphrase \
     remove "$DISTRIBUTION" "$1"
