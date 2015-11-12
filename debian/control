@@ -12,5 +12,6 @@ Package: dbd
 Architecture: all
 Depends: sudo, pbuilder, reprepro
 Pre-Depends: adduser
+Suggests: httpd
 Description: Environment for building DEB packages
  Environment for building DEB packages.
