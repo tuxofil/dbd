@@ -1,7 +1,25 @@
-Suite: unstable
-Codename: jessie
+Codename: release-1.0
+Suite: stable
 Architectures: amd64 i386 source
 Components: main non-free contrib
-Description: APT Repository
+Description: Stable APT Repository
 Contents:
-#SignWith: ********
+Log: release-1.0.log
+SignWith: yes
+
+Codename: release-2.0
+Suite: unstable
+Architectures: amd64 i386 source
+Components: main non-free contrib
+Description: Unstable APT Repository
+Contents:
+Log: release-2.0.log
+SignWith: yes
+
+Codename: experimental
+Architectures: amd64 i386 source
+Components: main non-free contrib
+Description: Experimental APT Repository
+Contents:
+Log: experimental.log
+SignWith: yes
