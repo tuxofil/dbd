@@ -6,3 +6,4 @@
 %dbd ALL = NOPASSWD: /usr/sbin/pbuilder --login --configfile /etc/dbd/dbd.conf
 %dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt include * *.changes
 %dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt remove * *
+%dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt removesrc * *

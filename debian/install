@@ -9,3 +9,4 @@ bin/dbd-login-nosave /usr/bin
 bin/dbd-build /usr/bin
 bin/dbd-include /usr/bin
 bin/dbd-remove /usr/bin
+bin/dbd-removesrc /usr/bin
