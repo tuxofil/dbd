@@ -2,6 +2,8 @@
 
 # Allow to create base tarball of chroot
 %dbd ALL = NOPASSWD: /usr/sbin/pbuilder --create --debootstrapopts --include=debhelper\,fakeroot --configfile /etc/dbd/dbd.conf
+# ...and initial setup
+%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --execute --save-after-exec --configfile /etc/dbd/dbd.conf /usr/share/dbd/init.sh
 
 # Allow to build packages
 %dbd ALL = NOPASSWD: /usr/sbin/pbuilder --build --debbuildopts -sa --configfile /etc/dbd/dbd.conf *.dsc

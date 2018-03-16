@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 # Create a base root FS tarball.
 # The tarball will be extracted and chrooted on each
@@ -7,7 +7,13 @@
 [ -z "$DBD_CONFIG" ] && DBD_CONFIG="/etc/dbd/dbd.conf"
 . "$DBD_CONFIG"
 
+# Generate pristine chroot
 sudo -n /usr/sbin/pbuilder \
     --create \
     --debootstrapopts --include=debhelper,fakeroot \
     --configfile "$DBD_CONFIG"
+
+# Setup the chroot
+sudo -n /usr/sbin/pbuilder --execute --save-after-exec \
+    --configfile "$DBD_CONFIG" \
+    "$DBD_INIT_SCRIPT"
