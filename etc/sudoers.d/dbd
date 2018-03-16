@@ -1,9 +1,16 @@
 # Sudoers rules for dbd tools
 
+# Allow to create base tarball of chroot
 %dbd ALL = NOPASSWD: /usr/sbin/pbuilder --create --debootstrapopts --include=debhelper\,fakeroot --configfile /etc/dbd/dbd.conf
+
+# Allow to build packages
 %dbd ALL = NOPASSWD: /usr/sbin/pbuilder --build --debbuildopts -sa --configfile /etc/dbd/dbd.conf *.dsc
+
+# Allow to login into chroot
 %dbd ALL = NOPASSWD: /usr/sbin/pbuilder --login --configfile /etc/dbd/dbd.conf --save-after-login
 %dbd ALL = NOPASSWD: /usr/sbin/pbuilder --login --configfile /etc/dbd/dbd.conf
+
+# Allow to add and remove packages to/from APT repositories
 %dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt include * *.changes
 %dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt remove * *
 %dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt removesrc * *
