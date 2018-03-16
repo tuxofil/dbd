@@ -11,7 +11,8 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-. /etc/dbd/dbd.conf
+[ -z "$DBD_CONFIG" ] && DBD_CONFIG="/etc/dbd/dbd.conf"
+. "$DBD_CONFIG"
 sudo -n /usr/bin/reprepro \
     --basedir /var/www/dbd-apt \
     removesrc "$DISTRIBUTION" "$1"

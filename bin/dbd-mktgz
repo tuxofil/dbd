@@ -4,7 +4,10 @@
 # The tarball will be extracted and chrooted on each
 # package build.
 
+[ -z "$DBD_CONFIG" ] && DBD_CONFIG="/etc/dbd/dbd.conf"
+. "$DBD_CONFIG"
+
 sudo -n /usr/sbin/pbuilder \
     --create \
     --debootstrapopts --include=debhelper,fakeroot \
-    --configfile /etc/dbd/dbd.conf
+    --configfile "$DBD_CONFIG"

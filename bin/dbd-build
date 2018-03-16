@@ -7,12 +7,16 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-. /etc/dbd/dbd.conf
+[ -z "$DBD_CONFIG" ] && DBD_CONFIG="/etc/dbd/dbd.conf"
+export DBD_CONFIG
+
+. "$DBD_CONFIG"
+
 # If a base root FS tarball is not created yet, create it
 [ -f "$BASETGZ" ] || dbd-mktgz
 
 # Do the chrooted build
 sudo -n /usr/sbin/pbuilder \
     --build --debbuildopts -sa \
-    --configfile /etc/dbd/dbd.conf \
+    --configfile "$DBD_CONFIG" \
     "$1"
