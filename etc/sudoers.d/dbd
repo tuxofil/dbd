@@ -14,3 +14,6 @@
 %dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt include * *.changes
 %dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt remove * *
 %dbd ALL = NOPASSWD: /usr/bin/reprepro --basedir /var/www/dbd-apt removesrc * *
+
+# Allow chroot upgrades
+%dbd ALL = NOPASSWD: /usr/sbin/pbuilder --execute --save-after-exec --configfile /etc/dbd/dbd.conf /usr/share/dbd/upgrade.sh

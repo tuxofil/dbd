@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+## Run apt-get update && apt-get dist-upgrade inside the chroot,
+## saving its state to a tarball.
+
+[ -z "$DBD_CONFIG" ] && DBD_CONFIG="/etc/dbd/dbd.conf"
+export DBD_CONFIG
+
+. "$DBD_CONFIG"
+
+# If a base root FS tarball is not created yet, create it
+[ -f "$BASETGZ" ] || dbd-mktgz
+
+# Do the upgrade
+sudo -n /usr/sbin/pbuilder --execute --save-after-exec \
+    --configfile "$DBD_CONFIG" \
+    /usr/share/dbd/upgrade.sh

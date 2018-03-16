@@ -14,6 +14,7 @@ Includes:
  environment;
 * _dbd-login_ - unpack and chroot into a base root FS. After
  logout all changes will be saved;
+* _dbd-upgrade_ - upgrade chroot to latest software;
 * _dbd-login-nosave_ - unpack and chroot into a base root FS.
  No changes will be saved after a logout;
 * _dbd-include_ - include built binary package into an APT
